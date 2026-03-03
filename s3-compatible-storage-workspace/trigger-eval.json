@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I just signed up for Cloudflare R2 and got my API keys. My account ID is 8a3f... something. Can you help me set up the AWS CLI so I can start uploading images from my photography site?",
+    "should_trigger": true
+  },
+  {
+    "query": "we need to move about 200GB of user-uploaded avatars from our old S3 bucket in us-west-2 to a new R2 bucket. already have rclone configured for both. whats the fastest way and how do i make sure nothing got lost?",
+    "should_trigger": true
+  },
+  {
+    "query": "my react app at https://app.example.com needs to upload files directly to our R2 bucket but im getting CORS errors. the bucket is called user-uploads and i have wrangler installed. also need presigned download URLs for the files",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a MinIO server running on my homelab at 192.168.1.50:9000 and I want to configure rclone to sync my Documents folder to it every night via cron. Can you help set that up?",
+    "should_trigger": true
+  },
+  {
+    "query": "aws s3 sync keeps failing with 'An error occurred (AccessDenied)' when I try to upload to my Backblaze B2 bucket. I'm using profile b2 with endpoint https://s3.us-west-004.backblazeb2.com. What am I doing wrong?",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to generate a presigned URL for a file in my S3 bucket that expires in 24 hours. The bucket is 'client-deliverables' and the file is at reports/q4-2025.pdf. Using default AWS profile.",
+    "should_trigger": true
+  },
+  {
+    "query": "help me set up lifecycle rules on my aws s3 bucket 'app-logs' so that files older than 90 days move to Glacier and get deleted after 1 year. also want to enable versioning.",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm comparing Wasabi vs Backblaze B2 vs R2 for storing about 5TB of video archives. Cost is the main concern but I also need to download files occasionally. Which would you recommend and can you help me set up the winner?",
+    "should_trigger": true
+  },
+  {
+    "query": "can you help me write a bash script that backs up my postgres database, compresses it, and uploads to my DigitalOcean Spaces bucket every day? the spaces region is nyc3 and I already have aws cli configured with profile do-spaces",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to set up a Cloudflare Worker that serves images from my R2 bucket with caching and image resizing. The bucket is called 'product-images' and I want URLs like images.mystore.com/product-123.webp",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you help me set up a PostgreSQL database with pgvector for storing embeddings? I need to create a table with a vector column and add an IVFFlat index for similarity search.",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm trying to deploy my Next.js app to Vercel but the build keeps failing with 'Module not found: Can't resolve @/components/Header'. My tsconfig paths look correct though.",
+    "should_trigger": false
+  },
+  {
+    "query": "help me write a python script that reads a CSV file, groups the data by department, and generates a summary report with charts using matplotlib. the csv has columns: name, department, salary, start_date",
+    "should_trigger": false
+  },
+  {
+    "query": "I need to set up nginx as a reverse proxy for my Node.js API running on port 3000. Want SSL with Let's Encrypt and rate limiting. The domain is api.example.com.",
+    "should_trigger": false
+  },
+  {
+    "query": "my docker compose setup has 3 services - a react frontend, a fastapi backend, and redis for caching. the frontend cant reach the backend, getting network errors. here's my docker-compose.yml...",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you help me set up GitHub Actions CI/CD for my Go project? I need it to run tests, build the binary, and create a release when I push a tag. Also want to upload the binary as a release asset.",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm building a REST API with Express.js and need to add JWT authentication. Users should be able to register, login, and access protected routes. Using MongoDB with Mongoose for the user model.",
+    "should_trigger": false
+  },
+  {
+    "query": "help me configure my Cloudflare DNS records for my domain. I need an A record pointing to my server IP, a CNAME for www, and MX records for Google Workspace email.",
+    "should_trigger": false
+  },
+  {
+    "query": "I want to set up Terraform to manage my AWS infrastructure. Need a VPC with public and private subnets, an RDS PostgreSQL instance, and an ECS cluster for running my containers.",
+    "should_trigger": false
+  },
+  {
+    "query": "can you help me write unit tests for my React components using Jest and React Testing Library? I have a LoginForm component that submits credentials and shows validation errors.",
+    "should_trigger": false
+  }
+]

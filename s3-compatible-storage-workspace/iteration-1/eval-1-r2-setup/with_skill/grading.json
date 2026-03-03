@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Configures AWS CLI profile with correct R2 endpoint format (https://abc123def456.r2.cloudflarestorage.com)",
+      "passed": true,
+      "evidence": "The response provides comprehensive AWS CLI setup instructions including Step 3 which explicitly shows how to configure the endpoint in ~/.aws/config with the correct format: 'endpoint_url = https://abc123def456.r2.cloudflarestorage.com'. The endpoint is also displayed in the connection details table at the top (line 14)."
+    },
+    {
+      "text": "Sets region to 'auto' for R2 configuration",
+      "passed": true,
+      "evidence": "The response clearly shows the region set to 'auto' in multiple places: (1) Connection details table shows 'Region | auto' (line 15), (2) AWS CLI interactive configuration prompts 'Default region name [None]: auto' (line 55), (3) AWS config file shows 'region = auto' (line 71), (4) Troubleshooting section confirms 'R2 uses `auto` as the region' (line 353)."
+    },
+    {
+      "text": "Configures rclone with provider=Cloudflare and the correct endpoint",
+      "passed": true,
+      "evidence": "Part 2 provides complete rclone setup instructions. Option B (recommended) shows the config file at ~/.config/rclone/rclone.conf with 'provider = Cloudflare' (line 182) and 'endpoint = https://abc123def456.r2.cloudflarestorage.com' (line 185). The interactive setup (Option A) also mentions selecting 'Cloudflare' as the provider (line 163)."
+    },
+    {
+      "text": "Shows how to create the 'media-assets' bucket",
+      "passed": true,
+      "evidence": "The response includes bucket creation instructions in Part 1, Step 5 (lines 122-126): 'If it does not exist yet, create it: aws s3 mb s3://media-assets --profile r2'. This command is also referenced in the troubleshooting section (line 351) as an alternative method to create the bucket."
+    },
+    {
+      "text": "Shows how to upload a test file and verify the connection",
+      "passed": true,
+      "evidence": "Part 3 provides comprehensive instructions for uploading and verifying: (1) Creates a test file (lines 219-220), (2) Uploads with AWS CLI (lines 225-226), (3) Uploads with rclone (lines 237-238), (4) Verifies uploads with list commands (lines 231-232 and 243-244), (5) Downloads the file back to verify round-trip (lines 249-256). The response states 'If the file contents match, both tools are configured correctly and working' (line 258)."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

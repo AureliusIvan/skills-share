@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Creates a CORS configuration that allows the origin https://myapp.com",
+      "passed": true,
+      "evidence": "Lines 17-40 show a CORS configuration JSON with 'AllowedOrigins': ['https://myapp.com']. The AllowedOrigins field is explicitly set to the required origin. Line 54 also confirms 'AllowedOrigins must use the format scheme://host[:port]' and demonstrates this requirement."
+    },
+    {
+      "text": "Includes PUT in the allowed methods for direct uploads",
+      "passed": true,
+      "evidence": "Lines 21 and 48 show 'AllowedMethods': ['GET', 'PUT', 'HEAD']. The explanation on line 48 explicitly states 'PUT is required for direct file uploads via presigned URLs.' PUT is clearly included and explained."
+    },
+    {
+      "text": "Shows how to apply CORS using wrangler r2 bucket cors set command",
+      "passed": true,
+      "evidence": "Lines 63-64 show the exact command: 'wrangler r2 bucket cors set app-uploads --file cors.json'. This is also repeated in the Summary of Commands table on line 333."
+    },
+    {
+      "text": "Shows how to generate presigned URLs using aws s3 presign or equivalent",
+      "passed": true,
+      "evidence": "Lines 149-171 show multiple examples of 'aws s3 presign' command with various expiry options (default 1-hour, 24 hours, 7 days). Additionally, lines 193-238 show programmatic presigned URL generation using AWS SDK for JavaScript v3 with getSignedUrl function. Lines 336-337 in the Summary table also include presigned download URL commands."
+    },
+    {
+      "text": "Mentions R2-specific CORS limitations (e.g., no wildcard AllowedHeaders, presigned URLs only on S3 API domain)",
+      "passed": true,
+      "evidence": "Line 49 states 'R2 does **not** support the wildcard `*` for `AllowedHeaders`, so each header must be listed explicitly.' Line 55 reiterates this: 'R2 does **not** support wildcard `*` in `AllowedHeaders`.' Line 140 explicitly states 'Presigned URLs only work with the S3 API domain (`https://<ACCOUNT_ID>.r2.cloudflarestorage.com`), **not** with custom domains.' Line 356 also mentions 'Presigned URLs only work with the S3 API endpoint, not custom domains attached to the bucket.'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": "100%"
+  }
+}

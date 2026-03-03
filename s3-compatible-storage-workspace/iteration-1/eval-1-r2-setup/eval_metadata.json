@@ -1,0 +1,27 @@
+{
+  "eval_id": 1,
+  "eval_name": "r2-credential-setup",
+  "prompt": "I just got my Cloudflare R2 credentials - account ID is abc123def456, access key AKEXAMPLE123 and secret SKEXAMPLE456. Help me set up the AWS CLI and rclone so I can start uploading files to a bucket called 'media-assets'. Then upload a test file to verify it works.",
+  "assertions": [
+    {
+      "text": "Configures AWS CLI profile with correct R2 endpoint format (https://abc123def456.r2.cloudflarestorage.com)",
+      "type": "content_check"
+    },
+    {
+      "text": "Sets region to 'auto' for R2 configuration",
+      "type": "content_check"
+    },
+    {
+      "text": "Configures rclone with provider=Cloudflare and the correct endpoint",
+      "type": "content_check"
+    },
+    {
+      "text": "Shows how to create the 'media-assets' bucket",
+      "type": "content_check"
+    },
+    {
+      "text": "Shows how to upload a test file and verify the connection",
+      "type": "content_check"
+    }
+  ]
+}

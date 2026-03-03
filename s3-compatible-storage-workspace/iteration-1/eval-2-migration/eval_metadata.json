@@ -1,0 +1,23 @@
+{
+  "eval_id": 2,
+  "eval_name": "cross-provider-migration",
+  "prompt": "I need to migrate about 50GB of images from my AWS S3 bucket 'old-images' in us-east-1 to a Cloudflare R2 bucket 'new-images'. I already have both configured in rclone as 'aws' and 'r2' remotes. What's the fastest way to do this and how do I verify everything copied correctly?",
+  "assertions": [
+    {
+      "text": "Recommends rclone copy (not sync) for safe migration",
+      "type": "content_check"
+    },
+    {
+      "text": "Includes performance flags like --transfers, --fast-list, or --progress",
+      "type": "content_check"
+    },
+    {
+      "text": "Shows verification step to compare source and destination object counts or sizes",
+      "type": "content_check"
+    },
+    {
+      "text": "Mentions or warns about metadata or limitations during cross-provider migration",
+      "type": "content_check"
+    }
+  ]
+}

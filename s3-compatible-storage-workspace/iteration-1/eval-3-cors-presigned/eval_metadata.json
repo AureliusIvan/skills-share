@@ -1,0 +1,27 @@
+{
+  "eval_id": 3,
+  "eval_name": "cors-and-presigned-urls",
+  "prompt": "I'm building a web app and need to set up CORS on my R2 bucket 'app-uploads' so my frontend at https://myapp.com can upload files directly. Also set up presigned URLs for downloads. I have wrangler installed and the AWS CLI configured with profile 'r2'.",
+  "assertions": [
+    {
+      "text": "Creates a CORS configuration that allows the origin https://myapp.com",
+      "type": "content_check"
+    },
+    {
+      "text": "Includes PUT in the allowed methods for direct uploads",
+      "type": "content_check"
+    },
+    {
+      "text": "Shows how to apply CORS using wrangler r2 bucket cors set command",
+      "type": "content_check"
+    },
+    {
+      "text": "Shows how to generate presigned URLs using aws s3 presign or equivalent",
+      "type": "content_check"
+    },
+    {
+      "text": "Mentions R2-specific CORS limitations (e.g., no wildcard AllowedHeaders, presigned URLs only on S3 API domain)",
+      "type": "content_check"
+    }
+  ]
+}

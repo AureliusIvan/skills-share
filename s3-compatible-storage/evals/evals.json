@@ -1,0 +1,23 @@
+{
+  "skill_name": "s3-compatible-storage",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just got my Cloudflare R2 credentials - account ID is abc123def456, access key AKEXAMPLE123 and secret SKEXAMPLE456. Help me set up the AWS CLI and rclone so I can start uploading files to a bucket called 'media-assets'. Then upload a test file to verify it works.",
+      "expected_output": "Should configure AWS CLI with a named profile for R2 using the correct endpoint format (https://abc123def456.r2.cloudflarestorage.com), set region to 'auto', configure rclone with provider=Cloudflare and no_check_bucket=true, create the bucket, and upload a test file. Should verify the connection works.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need to migrate about 50GB of images from my AWS S3 bucket 'old-images' in us-east-1 to a Cloudflare R2 bucket 'new-images'. I already have both configured in rclone as 'aws' and 'r2' remotes. What's the fastest way to do this and how do I verify everything copied correctly?",
+      "expected_output": "Should recommend rclone copy (not sync) for safety during migration, use --transfers 32 --fast-list --progress flags for performance, verify with rclone size on both source and destination, and mention the s3-migrate.sh helper script. Should warn about metadata limitations.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm building a web app and need to set up CORS on my R2 bucket 'app-uploads' so my frontend at https://myapp.com can upload files directly. Also set up presigned URLs for downloads. I have wrangler installed and the AWS CLI configured with profile 'r2'.",
+      "expected_output": "Should create a CORS JSON config allowing PUT and GET from https://myapp.com with appropriate headers, apply it using wrangler r2 bucket cors set, show how to generate presigned URLs with aws s3 presign, and mention R2-specific CORS limitations (no wildcard AllowedHeaders, 30s propagation delay, presigned URLs only work on S3 API domain not custom domains).",
+      "files": []
+    }
+  ]
+}
